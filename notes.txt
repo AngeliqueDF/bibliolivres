@@ -1,0 +1,38 @@
+database
+    book
+        cover image
+        title
+        author
+        genre
+        description
+        date published
+        isbn
+        editor
+        comments
+    user
+        id (primary)
+        username
+        password
+        books added
+        books reviewed
+        comments
+
+functions
+    user
+        view all books(all)
+
+        register(visitors)
+            mail
+            username
+            password
+        review_new_users(admin, moderator)
+
+        login(admin, moderator, user)
+
+        comment_book
+
+        add_book(admin, moderators, registered users)
+        review_new_books(admin, moderator)
+
+        report_book_error(registered users)
+        review_book_reports(admin, moderator)
