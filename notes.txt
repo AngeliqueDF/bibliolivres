@@ -1,21 +1,25 @@
 database
     book
-        cover image
         title
         author
         genre
         description
+        
+        cover image
         date published
         isbn
         editor
         comments
+        
+        added by
+        reviewed by
     user
         id (primary)
         username
         password
-        books added
-        books reviewed
-        comments
+        books added no
+        books reviewed no
+        comments no
 
 functions
     user
