@@ -5,33 +5,41 @@ database
         genre
         description
         
-        cover image
-        date published
+        cover_image
+        date_published
         isbn
         editor
         comments
         
-        added by
+        added_by
         reviewed by
-    user
+    users
         id (primary)
         username
         password
-        books added no
-        books reviewed no
-        comments no
+        nb_books_added
+        nb_books_reviewed
+        nb_comments
+
+models
+    user info
+        display username in header
+    register
+    login
+    add book
+    edit book info
+    display all books
 
 functions
     user
         view all books(all)
 
         register(visitors)
-            mail
             username
             password
         review_new_users(admin, moderator)
 
-        login(admin, moderator, user)
+        login ???(admin, moderator, user)???
 
         comment_book
 

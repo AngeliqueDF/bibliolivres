@@ -15,7 +15,7 @@
                 </ul>
 
         </nav>
-        <script src="<?php href("/script.js"); ?>"></script>
+        <!-- <script src="<?php// href("/script.js"); ?>"></script> -->
     </footer>
 </body>
 </html>
