@@ -1,21 +1,13 @@
 <main>
   <div class="container">
-    <form>
+    <form action="<?php echo htmlspecialchars("./../app/controller/LoginController.php"); ?>" method="POST">
       <div class="form-group">
         <label for="exampleInputEmail1">ID</label>
-        <input
-          type="text"
-          class="form-control"
-          id="id-connect-field"
-        />
+        <input type="text" class="form-control" id="id-connect-field" />
       </div>
       <div class="form-group">
         <label for="password-connect-field">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="password-connect-field"
-        />
+        <input type="password" class="form-control" id="password-connect-field" />
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1" />

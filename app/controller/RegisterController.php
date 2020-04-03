@@ -35,20 +35,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // sanitize data to prevent unwanted XSS attack
-    $new_user_id = filter_var($_POST["new-user-id"], FILTER_SANITIZE_STRING);
+    $new_username = filter_var($_POST["new-user-id"], FILTER_SANITIZE_STRING);
 
     // removes tags
     // test <script src="maliciousscript.js">hacked</script>
     $new_user_password = filter_var($_POST["new-user-password"], FILTER_SANITIZE_STRING);
 
-    echo $new_user_id, "<br />";
+    echo $new_username, "<br />";
     echo $new_user_password, "<br />";
 
     // check that the id has letters only
-    function check_id($idPattern, $new_user_id)
+    function check_id($idPattern, $new_username)
     {
         $idPattern = "^s*[a-zA-Zéçèàê]+s*$";
-        if (preg_match($idPattern, $new_user_id, $new_user_password)) {
+        if (preg_match($idPattern, $new_username, $new_user_password)) {
             echo "id ok <br />";
         } else {
             echo "invalid id <br />";
@@ -59,14 +59,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     
-    function check_password($new_user_id, $new_user_password)
+    function check_password($new_username, $new_user_password)
     {
         $lowercaseRegex = "(.*[a-z].*)";
         $uppercaseRegex = "(.*[A-Z].*)";
         $numberRegex = "(.*[0-9].*)";
 
         // check that password is different than id
-        if( $new_user_id == $new_user_password ){
+        if( $new_username == $new_user_password ){
             echo "<a class='nav-link' href='";
             echo href("/inscription/");
             echo "'>Retourner à la page d'inscription</a><br />";
@@ -91,12 +91,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo "Votre mot de passe doit contenir des lettres minuscules, majuscules, et des chiffres. <br />";
         }
     }
-    check_password($new_user_id, $new_user_password);
-
+    check_password($new_username, $new_user_password);
 
     // connect to database
     // pdo statement
     // redirect on success
-
     require_once("./../model/RegisterModel.php");
+
+    function check_duplicate_username($new_username, $new_user_password){
+
+        //finds all records with matching username
+        $query_result = search_db_duplicate_username($new_username);
+
+        
+        if( empty($query_result) ){
+            echo "Cet identifiant est disponible.", "<br />", "Inscription en cours", "<br />";
+            add_user($new_username, $new_user_password);
+            echo "Inscription réussie", "<br />";
+
+            echo "<a class='nav-link' href='";
+            echo href("/se-connecter/");
+            echo "'>Aller à la page de connexion</a>", "<br />";
+        }else{
+            echo "<pre>";
+            print_r($query_result);
+            echo "</pre>";
+            echo "Cet identifiant existe déjà.", "<br />";
+
+            echo "<a class='nav-link' href='";
+            echo href("/inscription/");
+            echo "'>Retourner à la page d'inscription</a><br />";
+        }
+
+    };
+    check_duplicate_username($new_username, $new_user_password);
 }
