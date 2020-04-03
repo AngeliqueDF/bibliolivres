@@ -8,23 +8,23 @@ function include_view(){
     switch ($request) {
         case "":
         case "/":
-            require("./app/view/home.php");
+            require("./app/Views/HomeView.php");
         break;
     
         case "/inscription/":
-            require("./app/view/register.php");
+            require("./app/Views/RegisterView.php");
         break;
         
         case "/se-connecter/":
-            require("./app/view/login.php");
+            require("./app/Views/LoginView.php");
         break;
     
         case "/ajouter-livre/":
-            require("./app/view/add_book.php");
+            require("./app/Views/AddBookView.php");
         break;
     
         case "/bibliotheque/":
-            require("./app/view/all-books.php");
+            require("./app/Views/AllBooksView.php");
         break;
         
         default:

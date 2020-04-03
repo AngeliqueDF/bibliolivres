@@ -1,10 +1,10 @@
 <main>
-  <div class="container">
-    
-    <h2>Bienvenue</h2>
-    <p>Partagez vos livres préférés</p>
+    <div class="container">
 
-    <h3>Derniers livres ajoutés</h3>
+        <h2>Bienvenue</h2>
+        <p>Partagez vos livres préférés</p>
+
+        <h3>Derniers livres ajoutés</h3>
         <section class="books-list">
             <article>
                 <header>
@@ -17,7 +17,7 @@
                     </footer>
                 </header>
             </article>
-            
+
             <article>
                 <header>
                     <img src="" alt="">
@@ -29,7 +29,7 @@
                     </footer>
                 </header>
             </article>
-            
+
             <article>
                 <header>
                     <img src="" alt="">
@@ -43,6 +43,6 @@
             </article>
         </section>
 
-    <p><a href="<?php href('/bibliotheque/'); ?>">Voir tous les livres</a></p>
-  </div>
+        <p><a href="<?php href('/bibliotheque/'); ?>">Voir tous les livres</a></p>
+    </div>
 </main>
