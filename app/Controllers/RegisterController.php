@@ -41,9 +41,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // test <script src="maliciousscript.js">hacked</script>
     $new_user_password = filter_var($_POST["new-user-password"], FILTER_SANITIZE_STRING);
 
-    echo $new_username, "<br />";
-    echo $new_user_password, "<br />";
-
     function check_id($idPattern, $new_username)
     {
         // check that the id has letters only
@@ -102,7 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     function check_duplicate_username($new_username, $new_user_password)
     {
-
         //finds all records with matching username
         $query_result = search_db_duplicate_username($new_username);
 

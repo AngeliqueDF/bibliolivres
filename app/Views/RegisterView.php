@@ -9,7 +9,7 @@
       </ul>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">ID</span>
+          <span class="input-group-text" id="basic-addon1">Identifiant</span>
         </div>
         <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="new-user-id-field" name="new-user-id" />
         <div class="valid-feedback" id="new-user-id-field-feedback">

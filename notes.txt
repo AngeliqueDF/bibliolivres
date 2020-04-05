@@ -49,3 +49,8 @@ functions
 
         report_book_error(registered users)
         review_book_reports(admin, moderator)
+
+
+sources
+https://johnmorrisonline.com/build-php-login-form-using-sessions/
+https://phpdelusions.net/pdo_examples/select

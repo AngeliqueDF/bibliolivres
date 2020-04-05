@@ -9,10 +9,10 @@ function search_db_duplicate_username($new_username){
     $username_check = "";
 
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
         $stmt->execute([$new_username]);
 
         //returns an array
@@ -31,11 +31,11 @@ function add_user($new_username, $new_user_password){
     $username = "root";
     $password = "root";
     try {
-        $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
-        $stmt = $conn->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->execute(['username' => $new_username, 'password' => $new_user_password]);
         
         return true;
