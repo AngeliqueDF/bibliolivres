@@ -2,7 +2,20 @@
 
 function display_add_book_view()
 {
-  if (isset($_SESSION["user_id"])) {
+  if (!$_SESSION["authenticated_user"]) {
+    // if (session_status() == 0 || session_status() == 1 || !$_SESSION["authenticated_user"]) {
+    echo "<main>
+    <div class=\"container\">
+    <p>Vous devez être connecté(e) pour ajouter un livre.</p>";
+    echo "<a href=";
+    href("/se-connecter/");
+    echo ">Connectez-vous ici : connexion</a>";
+    echo "<p>Vous êtes un nouvel utilisateur ? <a href=";
+    href("/inscription/");
+    echo ">Inscrivez-vous ici: inscription.</a></p>
+    </div>
+    </main>";
+  } else if (session_status() == 2) {
     echo '<main>
       <div class="container">
         <form>
@@ -80,15 +93,6 @@ function display_add_book_view()
       </div>
     </main>
     ';
-  } else {
-    echo "<main>
-          <div class=\"container\">
-            <p>Vous devez être connecté(e) pour ajouter un livre.</p>
-            <p>Vous êtes un nouvel utilisateur ? <a href=";
-    href("/inscription/");
-    echo ">Inscrivez-vous ici: inscription.</a></p>
-          </div>
-      </main>";
   }
 }
 display_add_book_view();

@@ -12,12 +12,11 @@
 
 <body>
     <header>
-
-        <nav class="navbar navbar-expand navbar-dark fixed-top bg-dark d-flex justify-content-between">
+        <nav class="navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between">
             <h1><a class="navbar-brand" href="<?php href(); ?>">Bibliolivres</a></h1></a>
 
             <ul class="navbar-nav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="<?php href("/inscription/"); ?>">Inscrivez-vous</a>
                 </li>
             </ul>

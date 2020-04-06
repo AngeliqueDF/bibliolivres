@@ -107,9 +107,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo href("/se-connecter/");
             echo "'>Aller à la page de connexion</a>", "<br />";
         } else {
-            echo "<pre>";
-            print_r($query_result);
-            echo "</pre>";
             echo "Cet identifiant existe déjà.", "<br />";
 
             echo "<a class='nav-link' href='";

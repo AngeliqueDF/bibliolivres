@@ -1,14 +1,17 @@
 <?php
 
+
 function toggle_login_link()
 {
-    if (isset($_SESSION["user_id"])) {
+    if (!$_SESSION["authenticated_user"]) {
+        echo '<a class="nav-link" href="';
+        href('/se-connecter/');
+        echo '">Connexion</a>';
+    } else {
+        echo '<li class="nav-item">';
         echo '<a class="nav-link" href="';
         href('/se-deconnecter/');
-        echo '>Ajouter un livre</a>';
-    } else {
-        echo '<a class="nav-link" href="';
-        href("/se-connecter/");
-        echo '">Connexion</a>';
+        echo '">Déconnexion</a>';
+        echo '</li>';
     }
 }

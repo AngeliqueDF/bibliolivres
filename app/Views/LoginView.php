@@ -9,7 +9,7 @@
         <label for="password-connect-field">Password</label>
         <input type="password" class="form-control" id="password-connect-field" name="password-connect-field" />
       </div>
-      <input class="btn btn-secondary btn-lg btn-block" type="submit" value="Accéder à votre compte" id="submit-sub-button" />
+      <input class="btn btn-primary btn-lg btn-block" type="submit" value="Accéder à votre compte" id="submit-sub-button" />
     </form>
   </div>
 </main>

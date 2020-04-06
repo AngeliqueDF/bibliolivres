@@ -107,13 +107,7 @@ window.onload = function () {
 
 			passwordSubFieldFeedback.innerHTML = "";
 		}
+		idSubField.addEventListener("keyup", checkId);
+		passwordSubField.addEventListener("keyup", checkPassword);
 	}
-
-	idSubField.addEventListener("keyup", checkId);
-	passwordSubField.addEventListener("keyup", checkPassword);
-	/*
-/se-connecter/
-    display error
-        Mot de passe ou identifiant incorrect
- */
 };

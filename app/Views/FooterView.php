@@ -5,10 +5,9 @@
     <nav class="fixed-bottom navbar-expand-sm navbar-dark bg-dark">
 
         <ul class="navbar-nav d-flex flex-row justify-content-around">
+            <?php toggle_login_link(); ?>
+
             <li class="nav-item">
-                <?php toggle_login_link(); ?>
-            </li>
-            <li class="nav-item active">
                 <a class="nav-link" href="<?php href("/ajouter-livre/"); ?>">Ajouter un livre</a>
             </li>
             <li class="nav-item">
@@ -17,8 +16,9 @@
         </ul>
 
     </nav>
-    <script src="<?php href("/script.js"); ?>"></script>
+    <script src="<?php href("/js/script.js"); ?>"></script>
 </footer>
+<script defer src="<?php href("/js/active_page.js"); ?>"></script>
 </body>
 
 </html>
