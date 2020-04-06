@@ -2,6 +2,10 @@
 
 require_once "./../functions/href.php";
 
+if (isset($_SESSION["user_id"])) {
+    print_r($_SESSION["user_id"]);
+}
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //check we received both input values
     if (empty($_POST["id-connect-field"])) {

@@ -12,7 +12,7 @@
                     </footer>
                 </header>
             </article>
-            
+
             <article>
                 <header>
                     <img src="" alt="">

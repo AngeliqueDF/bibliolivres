@@ -1,6 +1,7 @@
 <?php
 
-function search_db_duplicate_username($new_username){
+function search_db_duplicate_username($new_username)
+{
     $servername = "localhost";
     $database = "bibliolivres";
     $username = "root";
@@ -19,13 +20,13 @@ function search_db_duplicate_username($new_username){
         $username_check = $stmt->fetchAll();
 
         return $username_check;
-
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
     }
 }
 
-function add_user($new_username, $new_user_password){
+function add_user($new_username, $new_user_password)
+{
     $servername = "localhost";
     $database = "bibliolivres";
     $username = "root";
@@ -37,9 +38,8 @@ function add_user($new_username, $new_user_password){
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['username' => $new_username, 'password' => $new_user_password]);
-        
-        return true;
 
+        return true;
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         return false;

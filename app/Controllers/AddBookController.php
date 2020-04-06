@@ -1,11 +1,9 @@
 <?php
 
-echo "toto";
-
 function display_add_book_view()
 {
-    if (isset($_SERVER["user_id"])) {
-        echo '<main>
+  if (isset($_SESSION["user_id"])) {
+    echo '<main>
       <div class="container">
         <form>
           <div class="form-group">
@@ -82,15 +80,15 @@ function display_add_book_view()
       </div>
     </main>
     ';
-    } else {
-        echo "<main>
+  } else {
+    echo "<main>
           <div class=\"container\">
             <p>Vous devez être connecté(e) pour ajouter un livre.</p>
             <p>Vous êtes un nouvel utilisateur ? <a href=";
-        href("/inscription/");
-        echo ">Inscrivez-vous ici: inscription.</a></p>
+    href("/inscription/");
+    echo ">Inscrivez-vous ici: inscription.</a></p>
           </div>
       </main>";
-    }
+  }
 }
 display_add_book_view();
