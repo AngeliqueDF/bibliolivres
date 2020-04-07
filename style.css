@@ -1,15 +1,12 @@
-html{
-    font-size: 14px;
+main {
+	margin-top: 6em !important;
 }
-main{
-    margin-top: 6em !important;
-}
-.container{
-    margin-bottom: 6em;
+.container {
+	margin-bottom: 6em;
 }
 
 @media only screen and (min-width: 768px) {
-    html{
-        font-size: initial;
-    }
+	html {
+		font-size: initial;
+	}
 }

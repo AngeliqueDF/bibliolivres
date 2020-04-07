@@ -6,8 +6,6 @@ error_reporting(E_ALL);
 
 session_start();
 
-print_r($_SESSION);
-
 //define title tag for each view according to requested URI
 include("./app/Controllers/title_tag.php");
 
