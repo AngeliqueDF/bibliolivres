@@ -2,7 +2,7 @@
 
 function display_add_book_view()
 {
-  if (!$_SESSION["authenticated_user"]) {
+  if (array_key_exists("authenticated_user", $_SESSION)) {
     // if (session_status() == 0 || session_status() == 1 || !$_SESSION["authenticated_user"]) {
     echo "<main>
     <div class=\"container\">

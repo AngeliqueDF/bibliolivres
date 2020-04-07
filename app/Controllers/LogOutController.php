@@ -8,12 +8,9 @@ include("./../functions/href.php");
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     session_destroy();
+    session_unset();
     session_start();
-
     $_SESSION = [];
-    $_SESSION["user_id"] = "";
-    $_SESSION["username"] = "";
-    $_SESSION["authenticated_user"] = FALSE;
 
     header("Location: /");
 }

@@ -28,10 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         session_start();
 
+
         //variables gotten from the model, database
         $_SESSION["user_id"] = $existing_user["id"];
         $_SESSION["username"] = $existing_user["username"];
         $_SESSION["authenticated_user"] = TRUE;
+
+        // $ran_before = TRUE;
 
         header("Location: /");
     } else {

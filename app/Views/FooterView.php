@@ -16,8 +16,9 @@
         </ul>
 
     </nav>
-    <script src="<?php href("/js/script.js"); ?>"></script>
+
 </footer>
+<script src="<?php href("/js/script.js"); ?>"></script>
 <script defer src="<?php href("/js/active_page.js"); ?>"></script>
 </body>
 
