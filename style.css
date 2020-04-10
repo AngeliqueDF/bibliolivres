@@ -3,15 +3,23 @@ main {
 }
 .container {
 	margin-bottom: 6em;
+	width: 80%;
 }
 img {
 	width: 15em;
 	height: 20em;
-	border: 1px solid black;
+	border: 1px solid white;
+}
+.books-list article {
+	margin-bottom: 2em;
 }
 
 @media only screen and (min-width: 768px) {
-	html {
-		font-size: initial;
+	.books-list > div.d-flex {
+		flex-wrap: wrap;
+	}
+	.books-list article {
+		max-width: 15em;
+		margin: 1.25em;
 	}
 }

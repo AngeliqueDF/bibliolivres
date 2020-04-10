@@ -5,7 +5,7 @@
         <p>Partagez vos livres préférés</p>
 
         <h3>Derniers livres ajoutés</h3>
-        <section class="books-list">
+        <section class="books-list d-flex flex-wrap">
             <article>
                 <header>
                     <img src="" alt="">

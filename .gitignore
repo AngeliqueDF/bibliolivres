@@ -1,0 +1,2 @@
+#avoid exposing database info
+app/Models/db_config/

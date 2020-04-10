@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+function activePage() {
 	let currenthref = window.location.href;
 
 	let selector = "";
@@ -9,4 +9,5 @@ document.addEventListener("DOMContentLoaded", () => {
 	let activeLink;
 	activeLink = document.querySelector(selector);
 	activeLink.classList.toggle("active");
-});
+};
+window.addEventListener("load", activePage);

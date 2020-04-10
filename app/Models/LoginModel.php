@@ -1,22 +1,20 @@
 <?php
 
-require_once "./../functions/href.php";
-
-function check_login_user_query($login_username, $user_login)
+function check_login_user_query($login_username)
 {
-    $servername = "localhost";
-    $database = "bibliolivres";
-    $username = "root";
-    $password = "root";
+    require_once __DIR__ . "/db_config/database.php";
+    $servername = $db_config["db_host"];
+    $database = $db_config["db_name"];
+    $username = $db_config["db_user"];
+    $password = $db_config["db_password"];
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username AND password = :password");
         $stmt = $pdo->prepare("SELECT * FROM users WHERE username = ?");
         $stmt->execute([$login_username]);
 
-        //returns an array
+        //returns an array or false
         $user_found = $stmt->fetch(PDO::FETCH_ASSOC);
         return $user_found;
     } catch (PDOException $e) {

@@ -115,4 +115,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     };
     check_duplicate_username($new_username, $new_user_password);
+
+    //check duplicate email addresses
 }

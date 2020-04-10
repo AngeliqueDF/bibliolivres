@@ -16,7 +16,7 @@ include("./app/functions/href.php");
 include("./app/Views/HeaderView.php");
 
 //include view according to requested URI
-include("./app/Controllers/include_view.php");
+include("./app/Controllers/ViewsRouter.php");
 
 //include footer
 include("./app/Views/FooterView.php");

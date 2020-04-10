@@ -19,7 +19,9 @@
 
 </footer>
 <script src="<?php href("/js/script.js"); ?>"></script>
-<script defer src="<?php href("/js/active_page.js"); ?>"></script>
+<script src="<?php href("/js/validateLogin.js"); ?>"></script>
+<script src="<?php href("/js/validateRegister.js"); ?>"></script>
+<script defer src="<?php href("/js/activePage.js"); ?>"></script>
 </body>
 
 </html>

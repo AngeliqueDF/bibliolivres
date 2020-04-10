@@ -32,6 +32,10 @@ function include_view()
             require("./app/Views/AllBooksView.php");
             break;
 
+        case "/dashboard/":
+            require("./app/Views/DashboardView.php");
+            break;
+
         default:
             echo "404";
             break;

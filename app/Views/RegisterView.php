@@ -3,17 +3,29 @@
     <h2>Créer un compte</h2>
     <form action="<?php echo htmlspecialchars("./../app/Controllers/RegisterController.php"); ?>" method="POST">
 
+      <p>Votre addresse e-mail</p>
+      <ul>
+        <li>Doit être une adresse e-mail valide</li>
+      </ul>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="e-mail-address">Adresse e-mail</span>
+        </div>
+        <input type="text" class="form-control" placeholder="adresse@gmail.com" aria-label="Adresse e-mail" aria-describedby="e-mail-address" id="new-user-e-mail-field" name="new-user-e-mail-field" />
+        <div class="" id="new-user-e-mail-field-feedback">
+        </div>
+      </div>
+
       <p>Choisissez votre identifiant</p>
       <ul>
         <li>Doit comporter au moins 2 lettres</li>
       </ul>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1">Identifiant</span>
+          <span class="input-group-text" id="new-user-id">Identifiant</span>
         </div>
-        <input type="text" class="form-control" placeholder="" aria-label="Username" aria-describedby="basic-addon1" id="new-user-id-field" name="new-user-id" />
-        <div class="valid-feedback" id="new-user-id-field-feedback">
-          Looks good!
+        <input type="text" class="form-control" placeholder="Lecteur" aria-label="Username" aria-describedby="new-user-id" id="new-user-id-field" name="new-user-id" />
+        <div class="" id="new-user-id-field-feedback">
         </div>
       </div>
 

@@ -1,3 +1,14 @@
+<?php
+
+$link_to_dashboard = '<a class="nav-link" href="' . "http://$_SERVER[HTTP_HOST]" . '/dashboard/' . '">Dashboard</a>';
+
+$link_to_register = '<a class="nav-link" href="' . "http://$_SERVER[HTTP_HOST]" . '/inscription/' . '">Inscrivez-vous</a>';
+
+require __DIR__ . "./../Controllers/HeaderController.php";
+
+toggle_sub_dasboard_link($link_to_dashboard, $link_to_register);
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -12,14 +23,13 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand navbar-dark bg-dark d-flex justify-content-between">
+        <nav class="navbar navbar-expand navbar-dark bg-dark fixed-top d-flex justify-content-between">
             <h1><a class="navbar-brand" href="<?php href(); ?>">Bibliolivres</a></h1></a>
 
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php href("/inscription/"); ?>">Inscrivez-vous</a>
+                    <?php toggle_sub_dasboard_link($link_to_dashboard, $link_to_register); ?>
                 </li>
             </ul>
         </nav>
-
     </header>

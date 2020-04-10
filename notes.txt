@@ -17,6 +17,7 @@ database
         id (primary)
         username
         password
+        email_address
         
         nb_books_added
         nb_books_reviewed
