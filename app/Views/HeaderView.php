@@ -6,8 +6,6 @@ $link_to_register = '<a class="nav-link" href="' . "http://$_SERVER[HTTP_HOST]" 
 
 require __DIR__ . "./../Controllers/HeaderController.php";
 
-toggle_sub_dasboard_link($link_to_dashboard, $link_to_register);
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">

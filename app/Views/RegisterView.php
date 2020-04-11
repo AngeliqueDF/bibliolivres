@@ -41,8 +41,7 @@
           <span class="input-group-text" id="inputGroup-sizing-default">Mot de passe</span>
         </div>
         <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="new-user-password-field" name="new-user-password" />
-        <div class="valid-feedback" id="new-user-password-field-feedback">
-          Looks good!
+        <div class="" id="new-user-password-field-feedback">
         </div>
       </div>
       <input class="btn btn-secondary btn-lg btn-block" type="submit" value="Terminer l'inscription" id="submit-sub-button" />

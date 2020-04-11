@@ -18,10 +18,7 @@
     </nav>
 
 </footer>
-<script src="<?php href("/js/script.js"); ?>"></script>
-<script src="<?php href("/js/validateLogin.js"); ?>"></script>
-<script src="<?php href("/js/validateRegister.js"); ?>"></script>
-<script defer src="<?php href("/js/activePage.js"); ?>"></script>
+<script src="<?php href("/js/script.js"); ?>" type="module"></script>
 </body>
 
 </html>

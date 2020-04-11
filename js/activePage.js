@@ -2,7 +2,7 @@ function activePage() {
 	let currenthref = window.location.href;
 
 	let selector = "";
-	selector += "a[href~='";
+	selector += "a.nav-link[href~='";
 	selector += currenthref;
 	selector += "']";
 
@@ -10,4 +10,4 @@ function activePage() {
 	activeLink = document.querySelector(selector);
 	activeLink.classList.toggle("active");
 };
-window.addEventListener("load", activePage);
+export { activePage };

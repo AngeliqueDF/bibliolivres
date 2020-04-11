@@ -9,8 +9,10 @@ function toggle_login_link()
         echo '">Déconnexion</a>';
         echo '</li>';
     } else {
+        echo '<li class="nav-item">';
         echo '<a class="nav-link" href="';
         href('/se-connecter/');
         echo '">Connexion</a>';
+        echo '</li>';
     }
 }
