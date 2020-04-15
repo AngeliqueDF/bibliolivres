@@ -13,7 +13,6 @@
         starts grey, inactive
         once all fields are valid, turns green
  */
-
 function validateRegister() {
 
     let buttonSub = document.getElementById("submit-sub-button");
@@ -87,7 +86,7 @@ function validateRegister() {
             pwdFeedbackClasses.remove("valid-feedback");
 
             pwdFeedback.innerHTML =
-                "Votre mot de passe doit avoir au moins 1 chiffre.";
+                "Votre mot de passe doit contenir des chiffres, des majuscules et des minuscules.";
         } else {
             pwdInputClasses.remove("is-invalid");
             pwdInputClasses.add("is-valid");
@@ -109,5 +108,4 @@ function validateRegister() {
     //check email address is available WITH AJAX
 
 };
-
 window.addEventListener("load", validateRegister());

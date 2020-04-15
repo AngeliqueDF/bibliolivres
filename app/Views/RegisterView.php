@@ -11,7 +11,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="e-mail-address">Adresse e-mail</span>
         </div>
-        <input type="text" class="form-control" placeholder="adresse@gmail.com" aria-label="Adresse e-mail" aria-describedby="e-mail-address" id="new-user-e-mail-field" name="new-user-e-mail-field" />
+        <input type="text" class="form-control" placeholder="adresse@gmail.com" aria-label="Adresse e-mail" aria-describedby="e-mail-address" id="new-user-e-mail-field" name="new-user-e-mail" />
         <div class="" id="new-user-e-mail-field-feedback">
         </div>
       </div>
