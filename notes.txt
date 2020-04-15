@@ -55,3 +55,6 @@ functions
 sources
 https://johnmorrisonline.com/build-php-login-form-using-sessions/
 https://phpdelusions.net/pdo_examples/select
+
+
+https://stackoverflow.com/questions/36999461/how-to-install-only-devdependencies-using-npm

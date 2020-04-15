@@ -8,30 +8,31 @@ function title_tag()
     $request = $_SERVER['REQUEST_URI'];
 
     //title tag content
-    $title_tag = "";
+    $title_tag = " - Bibliolivres";
+    $current_page = "";
 
     switch ($request) {
         case '';
         case '/';
-            $title_tag = "Bibliolivres";
+            $current_page = "Accueil";
             break;
 
         case '/inscription/':
-            $title_tag = "Inscrivez-vous";
+            $current_page = "Inscrivez-vous";
             break;
 
         case '/se-connecter/':
-            $title_tag = "Connexion à votre compte";
+            $current_page = "Connexion à votre compte";
             break;
 
         case '/ajouter-livre/':
-            $title_tag = "Ajouter un livre";
+            $current_page = "Ajouter un livre";
             break;
 
         case '/bibliotheque/':
-            $title_tag = "Bibliothèque";
+            $current_page = "Bibliothèque";
             break;
     }
-    return $title_tag;
+    return $current_page . $title_tag;
 }
 $title_tag = title_tag();

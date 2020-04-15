@@ -24,7 +24,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="new-user-id">Identifiant</span>
         </div>
-        <input type="text" class="form-control" placeholder="Lecteur" aria-label="Username" aria-describedby="new-user-id" id="new-user-id-field" name="new-user-id" />
+        <input type="text" class="form-control" placeholder="Toto" aria-label="Username" aria-describedby="new-user-id" id="new-user-id-field" name="new-user-id" />
         <div class="" id="new-user-id-field-feedback">
         </div>
       </div>
