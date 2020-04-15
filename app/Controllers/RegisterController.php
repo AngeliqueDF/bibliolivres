@@ -112,13 +112,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (empty($query_username) && empty($query_user_mail)) {
             echo "Inscription en cours", "<br />";
 
-            add_user($new_user_mail, $new_username, $new_user_password);
-
-            echo "Inscription réussie", "<br />";
-
-            echo "<a class='nav-link' href='";
-            echo href("/se-connecter/");
-            echo "'>Aller à la page de connexion</a>", "<br />";
+            if (add_user($new_user_mail, $new_username, $new_user_password)) {
+                echo "Inscription réussie", "<br />";
+                echo "<a class='nav-link' href='";
+                echo href("/se-connecter/");
+                echo "'>Aller à la page de connexion</a>", "<br />";
+            }
         } else {
             echo "Cet identifiant et/ou adresse e-mail existe déjà.", "<br />";
 

@@ -65,7 +65,7 @@ function add_user($new_user_mail, $new_username, $new_user_password)
             ]
         );
 
-        // return true;
+        return true;
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         return false;
