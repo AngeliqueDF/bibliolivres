@@ -1,22 +1,23 @@
 {
-  "name": "bibliolivres",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app/src/js/script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/angelique-df/bibliolivres.git"
-  },
-  "author": "",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": "https://github.com/angelique-df/bibliolivres/issues"
-  },
-  "homepage": "https://github.com/angelique-df/bibliolivres#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  }
+	"name": "bibliolivres",
+	"version": "1.0.0",
+	"description": "",
+	"main": "app/src/js/script.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/angelique-df/bibliolivres.git"
+	},
+	"author": "",
+	"license": "UNLICENSED",
+	"bugs": {
+		"url": "https://github.com/angelique-df/bibliolivres/issues"
+	},
+	"homepage": "https://github.com/angelique-df/bibliolivres#readme",
+	"devDependencies": {
+		"browser-sync": "^2.26.7",
+		"gulp": "^4.0.2"
+	}
 }
