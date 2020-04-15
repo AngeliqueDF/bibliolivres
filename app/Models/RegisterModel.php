@@ -25,7 +25,7 @@ function search_db_duplicate_username($new_username)
     }
 }
 
-function add_user($new_username, $new_user_password)
+function add_user($new_user_mail, $new_username, $new_user_password)
 {
     $servername = "localhost";
     $database = "bibliolivres";
@@ -35,11 +35,17 @@ function add_user($new_username, $new_user_password)
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
+        $sql = "INSERT INTO users (user_mail, username, user_password) VALUES (:e_mail, :username, :user_password)";
         $stmt = $pdo->prepare($sql);
-        $stmt->execute(['username' => $new_username, 'password' => $new_user_password]);
+        $stmt->execute(
+            [
+                'e_mail' => $new_user_mail,
+                'username' => $new_username,
+                'user_password' => $new_user_password
+            ]
+        );
 
-        return true;
+        // return true;
     } catch (PDOException $e) {
         echo "Connection failed: " . $e->getMessage();
         return false;

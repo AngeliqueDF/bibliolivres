@@ -10,7 +10,7 @@
 // prepared sql query
 // success, redirect
 
-require_once "./../functions/href.php";
+require_once __DIR__ . "/../functions/href.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // check that we received all required data
@@ -28,36 +28,43 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         href("/inscription/");
         echo '">Retour au formulaire</a>';
         exit();
+    } else if (empty($_POST["new-user-e-mail-field"])) {
+        echo "Erreur : vous n'avez pas entré votre adresse e-mail";
+        echo "<br />";
+        echo '<a href="';
+        href("/inscription/");
+        echo '">Retour au formulaire</a>';
+        exit();
     }
 
-    // sanitize data to prevent unwanted XSS attack
+    // sanitize data
+    $new_user_mail = filter_var($_POST["new-user-e-mail-field"], FILTER_SANITIZE_EMAIL);
     $new_username = filter_var($_POST["new-user-id"], FILTER_SANITIZE_STRING);
-
-    // removes tags
     // test <script src="maliciousscript.js">hacked</script>
     $new_user_password = filter_var($_POST["new-user-password"], FILTER_SANITIZE_STRING);
 
-    function check_id($idPattern, $new_username)
+    function check_id($letters_only_pattern, $new_username) // ???????
     {
         // check that the id has letters only
-        $idPattern = "^s*[a-zA-Zéçèàê]+s*$";
-        if (preg_match($idPattern, $new_username)) {
+        $letters_only_pattern = "(^s*[a-zA-Zéçèàê]+s*$)";
+        if (preg_match($letters_only_pattern, $new_username)) {
             echo "id ok <br />";
         } else {
             echo "invalid id <br />";
         }
         // check that the id has at least 2 letters
         if (strlen($new_username) < 2) {
-            echo "Votre mot de passe doit contenir au moins 2 caractères";
+            echo "Votre identifiant doit contenir au moins 2 caractères";
         }
     }
+    check_id($letters_only_pattern, $new_username);
     function check_password($new_username, $new_user_password)
     {
         $lowercaseRegex = "(.*[a-z].*)";
         $uppercaseRegex = "(.*[A-Z].*)";
         $numberRegex = "(.*[0-9].*)";
 
-        // check that password is different than id
+        // check password is different than id
         if ($new_username == $new_user_password) {
             echo "<a class='nav-link' href='";
             echo href("/inscription/");
@@ -91,16 +98,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // connect to database
     // pdo statement
-    require_once("./../Models/RegisterModel.php");
+    require_once __DIR__ . "/../Models/RegisterModel.php";
 
-    function check_duplicate_username($new_username, $new_user_password)
+    function check_duplicate_username($new_user_mail, $new_username, $new_user_password)
     {
         //finds all records with matching username
         $query_result = search_db_duplicate_username($new_username);
 
         if (empty($query_result)) {
             echo "Cet identifiant est disponible.", "<br />", "Inscription en cours", "<br />";
-            add_user($new_username, $new_user_password);
+            add_user($new_user_mail, $new_username, $new_user_password);
             echo "Inscription réussie", "<br />";
 
             echo "<a class='nav-link' href='";
@@ -114,7 +121,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit("'>Retourner à la page d'inscription</a><br />");
         }
     };
-    check_duplicate_username($new_username, $new_user_password);
+    check_duplicate_username($new_user_mail, $new_username, $new_user_password);
 
     //check duplicate email addresses
+
 }

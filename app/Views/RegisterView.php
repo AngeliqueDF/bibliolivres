@@ -38,9 +38,9 @@
       </ul>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Mot de passe</span>
+          <span class="input-group-text" id="new-user-password">Mot de passe</span>
         </div>
-        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="new-user-password-field" name="new-user-password" />
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="new-user-password" id="new-user-password-field" name="new-user-password" />
         <div class="" id="new-user-password-field-feedback">
         </div>
       </div>

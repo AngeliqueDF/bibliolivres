@@ -2,7 +2,7 @@
   <div class="container">
     <form action="<?php echo htmlspecialchars(" ./../app/Controllers/LoginController.php"); ?>" method="POST">
       <div class="form-group">
-        <label for="exampleInputEmail1">Identifiant</label>
+        <label for="id-connect-field">Identifiant</label>
         <input type="text" class="form-control" id="id-connect-field" name="id-connect-field" />
       </div>
       <div class="form-group">

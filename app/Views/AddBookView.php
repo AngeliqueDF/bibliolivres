@@ -2,7 +2,8 @@
 
 include(__DIR__ . "/../Controllers/AddBookController.php");
 
-$logged_in_add_book_view = '<main>
+$logged_in_add_book_view =
+    '<main>
       <div class="container">
         <form>
           <div class="form-group">
@@ -77,8 +78,7 @@ $logged_in_add_book_view = '<main>
           />
         </form>
       </div>
-    </main>
-    ';
+    </main>';
 
 $logged_out_add_book_view = "<main>
     <div class=\"container\">

@@ -2,11 +2,11 @@
 
 //add links to footer with function
 $common_scripts = array(
-    "script" => "/js/script.js",
+    "script" => "/dist/js/script.js",
 );
 $scripts_to_add = array(
     "/inscription/" => array(
-        "validateRegister" => "/js/validateRegister.js"
+        "validateRegister" => "/dist/js/validateRegister.js"
     )
 );
 
