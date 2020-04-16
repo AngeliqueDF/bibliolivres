@@ -3,7 +3,7 @@
     <h2>Créer un compte</h2>
     <form action="<?php echo htmlspecialchars("./../app/Controllers/RegisterController.php"); ?>" method="POST">
 
-      <p>Votre addresse e-mail</p>
+      <p>Votre addresse e-mail (champs requis)</p>
       <ul>
         <li>Doit être une adresse e-mail valide</li>
       </ul>
@@ -11,12 +11,12 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="e-mail-address">Adresse e-mail</span>
         </div>
-        <input type="text" class="form-control" placeholder="adresse@gmail.com" aria-label="Adresse e-mail" aria-describedby="e-mail-address" id="new-user-e-mail-field" name="new-user-e-mail" />
+        <input type="text" class="form-control" placeholder="adresse@gmail.com" aria-label="Adresse e-mail" aria-describedby="e-mail-address" id="new-user-e-mail-field" name="new-user-e-mail" required />
         <div class="" id="new-user-e-mail-field-feedback">
         </div>
       </div>
 
-      <p>Choisissez votre identifiant</p>
+      <p>Choisissez votre identifiant (champs requis)</p>
       <ul>
         <li>Doit comporter au moins 2 lettres</li>
       </ul>
@@ -24,12 +24,12 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="new-user-id">Identifiant</span>
         </div>
-        <input type="text" class="form-control" placeholder="Toto" aria-label="Username" aria-describedby="new-user-id" id="new-user-id-field" name="new-user-id" />
+        <input type="text" class="form-control" placeholder="Toto" aria-label="Username" aria-describedby="new-user-id" id="new-user-id-field" name="new-user-id" required />
         <div class="" id="new-user-id-field-feedback">
         </div>
       </div>
 
-      <p>Choisissez votre mot de passe</p>
+      <p>Choisissez votre mot de passe (champs requis)</p>
       <ul>
         <li>Différent de l'identifiant.</li>
         <li>Au moins 8 caractères</li>
@@ -40,7 +40,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text" id="new-user-password">Mot de passe</span>
         </div>
-        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="new-user-password" id="new-user-password-field" name="new-user-password" />
+        <input type="password" class="form-control" aria-label="Sizing example input" aria-describedby="new-user-password" id="new-user-password-field" name="new-user-password" required />
         <div class="" id="new-user-password-field-feedback">
         </div>
       </div>

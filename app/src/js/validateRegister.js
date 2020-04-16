@@ -1,27 +1,44 @@
-/*
-/inscription/
-    ID
-        only letters
-        at least 2 letters
-    password
-        can't be the same as ID
-        lowercases
-        at least one uppercase
-        at least one number
-        at least 8 characters
-    button
-        starts grey, inactive
-        once all fields are valid, turns green
- */
+// /*
+// /inscription/
+//     ID
+//         only letters
+//         at least 2 letters
+//     password
+//         can't be the same as ID
+//         lowercases
+//         at least one uppercase
+//         at least one number
+//         at least 8 characters
+//     button
+//         starts grey, inactive
+//         once all fields are valid, turns green
+//  */
 function validateRegister() {
 
     let buttonSub = document.getElementById("submit-sub-button");
 
-    let idSubField = document.querySelector("#new-user-id-field");
+    let emailField = document.getElementById('new-user-e-mail-field');
+    let emailFieldFeedback = document.getElementById('new-user-e-mail-field-feedback')
+
+    let idSubField = document.getElementById("new-user-id-field");
     let idSubFieldFeedback = document.getElementById(
         "new-user-id-field-feedback"
     );
     let idPattern = "^s*[a-zA-Zéçèàê]+s*$";
+
+    function checkEmail() {
+        setTimeout(() => {
+            if (
+                !emailField.value.includes("@") ||
+                emailField.value.includes(".") ||
+                emailField.value.length < 6
+            ) {
+                emailField.classList.add("is-invalid");
+                emailFieldFeedback.classList.add("invalid-feedback");
+                emailFieldFeedback.textContent = `Cette adresse semble incorrecte.`;
+            }
+        }, 1800);
+    }
 
     function checkId() {
         if (idSubField.value.length <= 1) {
@@ -100,6 +117,7 @@ function validateRegister() {
             pwdFeedback.innerHTML = "";
         }
     }
+    emailField.addEventListener("keyup", checkEmail);
     idSubField.addEventListener("keyup", checkId);
     pwdInput.addEventListener("keyup", checkPassword);
 
@@ -108,4 +126,4 @@ function validateRegister() {
     //check email address is available WITH AJAX
 
 };
-window.addEventListener("load", validateRegister());
+export { validateRegister };

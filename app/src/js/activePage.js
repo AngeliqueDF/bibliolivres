@@ -1,13 +1,5 @@
 function activePage() {
-	let currenthref = window.location.href;
-
-	let selector = "";
-	selector += "a.nav-link[href~='";
-	selector += currenthref;
-	selector += "']";
-
-	let activeLink;
-	activeLink = document.querySelector(selector);
-	activeLink.classList.toggle("active");
+    document.querySelector(`[href*='${window.location.pathname}']`).classList.toggle("active");
 };
-export { activePage };
+
+export { activePage }
