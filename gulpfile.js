@@ -38,9 +38,10 @@ function js() {
 }
 
 function watch() {
-
     browserSync.init({
-        proxy: "http://localhost:8888/"
+        proxy: "http://localhost:8888/",
+        notify: false,
+        external: false
     });
 
     gulp.watch("./*.php").on("change", browserSync.reload);

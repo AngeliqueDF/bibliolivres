@@ -27,17 +27,23 @@ function validateRegister() {
     let idPattern = "^s*[a-zA-Zéçèàê]+s*$";
 
     function checkEmail() {
-        setTimeout(() => {
-            if (
-                !emailField.value.includes("@") ||
-                emailField.value.includes(".") ||
-                emailField.value.length < 6
-            ) {
-                emailField.classList.add("is-invalid");
-                emailFieldFeedback.classList.add("invalid-feedback");
-                emailFieldFeedback.textContent = `Cette adresse semble incorrecte.`;
-            }
-        }, 1800);
+        if (emailField.value.length == 0) {
+            emailField.className = "form-control";
+            emailFieldFeedback.textContent = ``;
+        } else if (
+            !emailField.value.includes("@") ||
+            !emailField.value.includes(".") ||
+            emailField.value.length < 6
+        ) {
+            emailField.classList.add("is-invalid");
+            emailFieldFeedback.classList.add("invalid-feedback");
+            emailFieldFeedback.textContent = `Cette adresse semble incorrecte.`;
+        } else {
+            emailField.classList.add("is-valid");
+            emailField.classList.remove("is-invalid");
+            emailFieldFeedback.classList.add("valid-feedback");
+            emailFieldFeedback.innerHTML = "";
+        }
     }
 
     function checkId() {
