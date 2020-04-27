@@ -12,7 +12,6 @@ include("./app/Functions/href.php");
 //define title tag for each view according to requested URI
 include("./app/Controllers/TitleTagController.php");
 
-
 //include header
 include("./app/Views/HeaderView.php");
 

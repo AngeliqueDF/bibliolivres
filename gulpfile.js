@@ -14,6 +14,7 @@ function css() {
         cssnano() //optimization
     ];
     return gulp.src('./app/src/style/style.css')
+        // return gulp.src('style.css')
         //parse CSS once
         .pipe(postcss(plugins))
         .pipe(rename({

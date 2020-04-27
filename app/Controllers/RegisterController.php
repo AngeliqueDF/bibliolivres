@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     {
         require_once __DIR__ . "/../Models/RegisterModel.php";
 
-        //check user doesn't exist already
+        //check username or email doesn't exist already
 
         //finds all records with matching username
         $query_username = search_username_duplicate($new_username);
