@@ -4,8 +4,8 @@ function check_login_user_query($login_username)
 {
     $servername = "localhost";
     $database = "bibliolivres";
-    $username = "adfijhnb";
-    $password = "GxC7yRnyCNyJks3f";
+    $username = "root";
+    $password = "root";
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

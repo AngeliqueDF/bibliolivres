@@ -1,6 +1,6 @@
 <?php
 
-require_once "./../functions/href.php";
+require_once "./../Helpers/Href.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //check we received both input values
@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //if we found user in the database
     if ($existing_user) {
         //returns true or false
-        $check_password_from_db = password_verify($login_password, $existing_user["password"]);
+        $check_password_from_db = password_verify($login_password, $existing_user["user_password"]);
+
 
         // $_SESSION["authenticated_user"] = FALSE;
 

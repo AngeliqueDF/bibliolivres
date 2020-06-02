@@ -1,6 +1,8 @@
 <?php
-
+//link if connected
 $link_to_dashboard = '<a class="nav-link" href="' . "http://$_SERVER[HTTP_HOST]" . '/dashboard/' . '">Dashboard</a>';
+
+//link if not connected
 $link_to_register = '<a class="nav-link" href="' . "http://$_SERVER[HTTP_HOST]" . '/inscription/' . '">Inscrivez-vous</a>';
 
 require __DIR__ . "./../Controllers/HeaderController.php";

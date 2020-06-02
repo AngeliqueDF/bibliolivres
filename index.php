@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 session_start();
 
 //include function to output internal links
-include("./app/Functions/href.php");
+include("./app/Helpers/Href.php");
 
 //define title tag for each view according to requested URI
 include("./app/Controllers/TitleTagController.php");
@@ -16,7 +16,7 @@ include("./app/Controllers/TitleTagController.php");
 include("./app/Views/HeaderView.php");
 
 //include view according to requested URI
-include("./app/Controllers/ViewsRouter.php");
+include("./app/Controllers/Router.php");
 
 //include footer
 include("./app/Views/FooterView.php");

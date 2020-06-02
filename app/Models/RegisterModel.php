@@ -1,13 +1,11 @@
 <?php
 
-
-
 function search_username_duplicate($new_username)
 {
     $servername = "localhost";
     $database = "bibliolivres";
-    $username = "adfijhnb";
-    $password = "GxC7yRnyCNyJks3f";
+    $username = "root";
+    $password = "root";
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,8 +25,8 @@ function search_user_mail_duplicate($new_user_mail)
 {
     $servername = "localhost";
     $database = "bibliolivres";
-    $username = "adfijhnb";
-    $password = "GxC7yRnyCNyJks3f";
+    $username = "root";
+    $password = "root";
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -49,8 +47,8 @@ function add_user($new_user_mail, $new_username, $new_user_password)
 {
     $servername = "localhost";
     $database = "bibliolivres";
-    $username = "adfijhnb";
-    $password = "GxC7yRnyCNyJks3f";
+    $username = "root";
+    $password = "root";
     try {
         $pdo = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

@@ -10,7 +10,7 @@
 // prepared sql query
 // success, redirect
 
-require_once __DIR__ . "/../functions/href.php";
+require_once __DIR__ . "/../Helpers/Href.php";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // check that we received all required data
@@ -127,17 +127,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
     };
 
-    // echo "mail ";
-    // var_dump(validate_user_mail($new_user_mail));
-    // echo "<br />";
+    echo "mail ";
+    var_dump(validate_user_mail($new_user_mail));
+    echo "<br />";
 
-    // echo "username ";
-    // var_dump(validate_username($letters_only_pattern, $new_username));
-    // echo "<br />";
+    echo "username ";
+    var_dump(validate_username($letters_only_pattern, $new_username));
+    echo "<br />";
 
-    // echo "password ";
-    // var_dump(validate_password($new_username, $new_user_password));
-    // echo "<br />";
+    echo "password ";
+    var_dump(validate_password($new_username, $new_user_password));
+    echo "<br />";
 
     if (
         validate_user_mail($new_user_mail) &&
