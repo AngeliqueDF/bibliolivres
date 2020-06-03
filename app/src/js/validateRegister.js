@@ -15,7 +15,9 @@
 //  */
 function validateRegister() {
 
-    let buttonSub = document.getElementById(`submit-sub-button`);
+    let emailValid = false;
+    let idValid = false;
+    let passwordValid = false;
 
     let emailField = document.getElementById(`new-user-e-mail-field`);
     let emailFieldFeedback = document.getElementById(`new-user-e-mail-field-feedback`)
@@ -29,6 +31,9 @@ function validateRegister() {
     function checkEmail() {
         if (emailField.value.length == 0) {
             emailField.className = `form-control`;
+
+            emailValid = true;
+
             emailFieldFeedback.textContent = ``;
         } else if (
             !emailField.value.includes(`@`)
@@ -37,12 +42,18 @@ function validateRegister() {
         ) {
             emailField.classList.add(`is-invalid`);
             emailFieldFeedback.classList.add(`invalid-feedback`);
+
+            emailValid = false;
+
             emailFieldFeedback.textContent = `Cette adresse semble incorrecte.`;
         } else {
             emailField.classList.add(`is-valid`);
             emailField.classList.remove(`is-invalid`);
+            emailFieldFeedback.classList.remove(`invalid-feedback`);
             emailFieldFeedback.classList.add(`valid-feedback`);
-            emailFieldFeedback.innerHTML = ``;
+            emailFieldFeedback.textContent = `Cette adresse semble correcte.`;
+            
+            emailValid = true;
         }
     }
 
@@ -51,11 +62,15 @@ function validateRegister() {
             idSubField.classList.add(`is-invalid`);
             idSubFieldFeedback.classList.add(`invalid-feedback`);
 
+            idValid = false;
+
             idSubFieldFeedback.innerHTML =
                 `Votre identifiant doit comporter au moins 2 lettres`;
         } else if (!idSubField.value.match(idPattern)) {
             idSubField.classList.add(`is-invalid`);
             idSubField.classList.remove(`is-valid`);
+
+            idValid = false;
 
             idSubFieldFeedback.innerHTML =
                 `Votre identifiant ne doit comporter que des lettres`;
@@ -64,6 +79,7 @@ function validateRegister() {
             idSubField.classList.remove(`is-invalid`);
 
             idSubFieldFeedback.innerHTML = ``;
+            idValid = true;
         }
     }
 
@@ -92,6 +108,8 @@ function validateRegister() {
             pwdFeedbackClasses.add(`invalid-feedback`);
             pwdFeedbackClasses.remove(`valid-feedback`);
 
+            passwordValid = false;
+
             pwdFeedback.innerHTML =
                 `Votre mot de passe ne peut pas être votre identifiant`;
         } else if (pwdLength <= 7) {
@@ -99,6 +117,8 @@ function validateRegister() {
 
             pwdFeedbackClasses.add(`invalid-feedback`);
             pwdFeedbackClasses.remove(`valid-feedback`);
+
+            passwordValid = false;
 
             pwdFeedback.innerHTML =
                 `Votre mot de passe doit avoir au moins 8 caractères.`;
@@ -108,28 +128,48 @@ function validateRegister() {
             pwdFeedbackClasses.add(`invalid-feedback`);
             pwdFeedbackClasses.remove(`valid-feedback`);
 
+            passwordValid = false;
+
             pwdFeedback.innerHTML =
                 `Votre mot de passe doit contenir des chiffres, des majuscules et des minuscules.`;
         } else {
             pwdInputClasses.remove(`is-invalid`);
             pwdInputClasses.add(`is-valid`);
 
-            buttonSub.classList.add(`btn-success`);
-            buttonSub.classList.remove(`btn-secondary`);
-
             pwdFeedbackClasses.add(`valid-feedback`);
             pwdFeedbackClasses.remove(`invalid-feedback`);
 
             pwdFeedback.innerHTML = ``;
+            passwordValid = true;
         }
     }
-    emailField.addEventListener(`keyup`, checkEmail);
-    idSubField.addEventListener(`keyup`, checkId);
-    pwdInput.addEventListener(`keyup`, checkPassword);
-
-    //check username is available WITH AJAX
-
-    //check email address is available WITH AJAX
-
+    function changeButtonState(){
+        let buttonSub = document.getElementById(`submit-sub-button`);
+        if ( emailValid && idValid && passwordValid ) {
+            buttonSub.classList.add(`btn-success`);
+            buttonSub.classList.remove(`btn-secondary`);
+        }else{
+            buttonSub.classList.add(`btn-secondary`);
+            buttonSub.classList.remove(`btn-success`);
+        }
+    }
+    ['focusout', 'keyup'].forEach(event => 
+        emailField.addEventListener(event, () => {
+            checkEmail();
+            changeButtonState();
+        }
+    ));
+    ['focusout', 'keyup'].forEach(event => 
+        idSubField.addEventListener(event, () => {
+            checkId();
+            changeButtonState();
+        }
+    ));
+    ['focusout', 'keyup'].forEach(event => 
+        pwdInput.addEventListener(event, () => {
+            checkPassword();
+            changeButtonState();
+        }
+    ));
 };
 export { validateRegister };
